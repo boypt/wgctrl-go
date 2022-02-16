@@ -30,7 +30,7 @@ type Client struct {
 // New creates a new Client and returns whether or not the generic netlink
 // interface is available.
 func New() (*Client, bool, error) {
-	c, err := genetlink.Dial(&netlink.Config{Strict: true})
+	c, err := genetlink.Dial(&netlink.Config{Strict: false})
 	if err != nil {
 		return nil, false, err
 	}
